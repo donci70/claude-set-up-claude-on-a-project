@@ -20,6 +20,6 @@ A small Express.js REST API with an in-memory data store (no real database).
 
 ## Conventions
 
-- Routes never touch data directly — reads/writes go through `db/store.js`.
-- New resources get their own router file in `routes/`, mounted in `server.js`, following `routes/users.js`.
-- use hungarian notation on variable names
+- Routes: call db/store.js for reads/writes, not direct data access.
+- New resources: create their own router file in routes/, not inline routes in server.js — follow the pattern in routes/users.js
+- use Hungarian notation for variables, not camelCase
